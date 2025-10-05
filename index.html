@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolShade | Sistemas Urbanos Inteligentes</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>CoolShade</span>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#datos">Datos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Inicio / Quiénes somos -->
+    <section id="inicio" class="hero fade-in">
+        <div class="hero-content">
+            <h1>Transformando las paradas de autobús en espacios inteligentes y confortables</h1>
+            <p>Desarrollamos sistemas urbanos inteligentes que mejoran el confort térmico y la calidad del aire en las paradas de autobús, creando espacios más saludables para todos.</p>
+            <button class="cta-button">Conoce más sobre el proyecto</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000" alt="Ciudad sostenible" class="responsive-img">
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="fade-in">
+        <h2>Cómo Funciona</h2>
+        <div class="system-grid">
+            <div class="system-card">
+                <i class="fas fa-solar-panel"></i>
+                <h3>Energía Solar</h3>
+                <p>Paneles solares de alta eficiencia alimentan todo el sistema de manera sostenible.</p>
+            </div>
+            <div class="system-card">
+                <i class="fas fa-battery-full"></i>
+                <h3>Almacenamiento</h3>
+                <p>Baterías de última generación garantizan el funcionamiento 24/7.</p>
+            </div>
+            <div class="system-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Sensores</h3>
+                <p>Monitoreo constante de temperatura, humedad, CO₂ y calidad del aire.</p>
+            </div>
+            <div class="system-card">
+                <i class="fas fa-display"></i>
+                <h3>Pantallas</h3>
+                <p>Información en tiempo real para los usuarios del transporte público.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datos en tiempo real -->
+    <section id="datos" class="fade-in">
+        <h2>Datos en Tiempo Real</h2>
+        <div class="data-container">
+            <div class="data-card">
+                <h3>Temperatura y Humedad</h3>
+                <canvas id="tempHumChart"></canvas>
+            </div>
+            <div class="data-card">
+                <h3>Calidad del Aire</h3>
+                <canvas id="airQualityChart"></canvas>
+            </div>
+            <div class="data-info">
+                <p>Última actualización: <span id="lastUpdate">Cargando...</span></p>
+                <button class="download-btn" onclick="downloadData()">
+                    <i class="fas fa-download"></i> Descargar datos (CSV)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Impacto -->
+    <section id="blog" class="fade-in">
+        <h2>Últimas Noticias</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" alt="Impacto ambiental">
+                <div class="blog-content">
+                    <h3>Reducción del 30% en la huella de carbono</h3>
+                    <p>Los primeros resultados muestran una significativa mejora en la calidad del aire...</p>
+                    <a href="#" class="read-more">Leer más →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589" alt="Tecnología verde">
+                <div class="blog-content">
+                    <h3>Innovación en Movilidad Urbana</h3>
+                    <p>Nuestra tecnología está transformando la experiencia del transporte público...</p>
+                    <a href="#" class="read-more">Leer más →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="fade-in">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Proyecto desarrollado por CoolShade – Datos abiertos para una ciudad más sostenible.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
